@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>stageInfo</key>
+	<dict>
+		<key>curStage</key>
+		<string>default.plist</string>
+		<key>nextStage</key>
+		<string></string>
+	</dict>
+	<key>resources</key>
+	<dict>
+		<key>map</key>
+		<string>floor.tmx</string>
+	</dict>
+</dict>
+</plist>
