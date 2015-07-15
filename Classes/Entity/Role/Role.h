@@ -3,7 +3,6 @@
 
 #include "cocos2d.h"
 #include "FSM.h"
-#include "Progress.h"
 #include "../../Controller/Controller.h"
 
 typedef struct _BoundingBox {
@@ -55,12 +54,6 @@ protected:
 
     CC_SYNTHESIZE(bool, m_direction, Direction);
     CC_SYNTHESIZE(BoundingBox, m_bodyBox, BodyBox);
-    //CC_SYNTHESIZE(BoundingBox, m_hitBox, HitBox);
-
-    //CC_SYNTHESIZE(float, m_health, Health);
-    //CC_SYNTHESIZE(float, m_maxHealth, MaxHealth);
-    //CC_SYNTHESIZE(float, m_attack, Attack);
-    //CC_SYNTHESIZE_RETAIN(Progress*, m_progress, Progress);
 };
 
 #endif

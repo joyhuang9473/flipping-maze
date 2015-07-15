@@ -1,6 +1,6 @@
 #include "AppDelegate.h"
 #include "Scene/MenuScene.h"
-#include "Layer/GameLayer/GameManager.h"
+#include "GameManager.h"
 
 USING_NS_CC;
 
@@ -35,7 +35,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::create("My Game");
+        glview = GLViewImpl::create("Hckthon-framework");
         director->setOpenGLView(glview);
     }
 

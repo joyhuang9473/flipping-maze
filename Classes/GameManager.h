@@ -2,7 +2,6 @@
 #define __GAME_MANAGER_H__
 
 #include "cocos2d.h"
-#include "../../Entity/Role/Player.h"
 
 class GameManager {
 public:

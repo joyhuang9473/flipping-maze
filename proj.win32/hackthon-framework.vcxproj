@@ -146,10 +146,9 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\Classes\Controller\KeyboardController.cpp" />
     <ClCompile Include="..\Classes\Entity\Role\FSM.cpp" />
     <ClCompile Include="..\Classes\Entity\Role\Player.cpp" />
-    <ClCompile Include="..\Classes\Entity\Role\Progress.cpp" />
     <ClCompile Include="..\Classes\Entity\Role\Role.cpp" />
+    <ClCompile Include="..\Classes\GameManager.cpp" />
     <ClCompile Include="..\Classes\Layer\GameLayer\GameLayer.cpp" />
-    <ClCompile Include="..\Classes\Layer\GameLayer\GameManager.cpp" />
     <ClCompile Include="..\Classes\Layer\GameLayer\VisibleRect.cpp" />
     <ClCompile Include="..\Classes\Layer\MenuLayer\MenuLayer.cpp" />
     <ClCompile Include="..\Classes\Scene\GameScene.cpp" />
@@ -169,10 +168,9 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\Classes\Controller\KeyboardController.h" />
     <ClInclude Include="..\Classes\Entity\Role\FSM.h" />
     <ClInclude Include="..\Classes\Entity\Role\Player.h" />
-    <ClInclude Include="..\Classes\Entity\Role\Progress.h" />
     <ClInclude Include="..\Classes\Entity\Role\Role.h" />
+    <ClInclude Include="..\Classes\GameManager.h" />
     <ClInclude Include="..\Classes\Layer\GameLayer\GameLayer.h" />
-    <ClInclude Include="..\Classes\Layer\GameLayer\GameManager.h" />
     <ClInclude Include="..\Classes\Layer\GameLayer\VisibleRect.h" />
     <ClInclude Include="..\Classes\Layer\MenuLayer\MenuLayer.h" />
     <ClInclude Include="..\Classes\Scene\GameScene.h" />
