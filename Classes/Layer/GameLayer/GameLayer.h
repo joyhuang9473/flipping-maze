@@ -10,26 +10,24 @@ public:
 
     virtual bool init();
     CREATE_FUNC(GameLayer);
-    void setPlayer(cocos2d::TMXTiledMap* map, Player* player);
+    void setPlayer(Player* player);
+	void bindRoleToMap(Role* role, cocos2d::TMXTiledMap* map);
 
-    bool collisionDetection(const BoundingBox &hitBox, const BoundingBox &bodyBox);
-
+	void logic(float dt);
+    
     void initPhysics();
-    void addBoxBodyForRole(Role* role);
-    void updateBoxBody(float dt);
+    void setPhysicsBodyForRole(Role* role);
+    void updatePhysicsBody(float dt);
+	bool collisionDetection(const BoundingBox &bodyBoxA, const BoundingBox &bodyBoxB);
+	void updateActionScope(float dt);
 
-    void logic(float dt);
-    void updateActionScope(float dt);
 
 private:
     Player* m_player;
-    b2World* m_world;
     ContactListener* m_contactListener;
 
     cocos2d::TMXTiledMap* m_map;
 
-    bool isMissionComplete;
-    bool isInterrupted;
 };
 
 #endif

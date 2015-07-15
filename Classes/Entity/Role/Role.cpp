@@ -43,6 +43,10 @@ Controller* Role::getController() {
     return this->m_controller;
 }
 
+void Role::setTiledMap(cocos2d::TMXTiledMap* map) {
+	this->m_map = map;
+}
+
 void Role::setTagPosition(int x, int y) {
     this->setPosition(Vec2(x, y));
     this->updateBoxes();

@@ -14,12 +14,8 @@ public:
 	CREATE_FUNC(Player);
 
     void setViewPointByPlayer();
-    void setTiledMap(cocos2d::TMXTiledMap* map);
 
     virtual void setTagPosition(int x, int y);
-
-private:
-    cocos2d::TMXTiledMap* m_map;
 };
 
 #endif

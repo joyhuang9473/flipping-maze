@@ -76,7 +76,3 @@ void Player::setTagPosition(int x, int y) {
     Role::setTagPosition(x, y);
     this->setViewPointByPlayer();
 }
-
-void Player::setTiledMap(cocos2d::TMXTiledMap *map) {
-    this->m_map = map;
-}

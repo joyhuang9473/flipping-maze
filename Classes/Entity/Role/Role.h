@@ -30,6 +30,7 @@ public:
     void setController(Controller* controller);
     Controller* getController();
 
+	void setTiledMap(cocos2d::TMXTiledMap* map);
     virtual void setTagPosition(int x, int y);
     virtual cocos2d::Point getTagPosition();
 
@@ -40,7 +41,8 @@ public:
 	void updateBoxes();
 
 protected:
-    cocos2d::Sprite* m_sprite;
+	cocos2d::Sprite* m_sprite;
+	cocos2d::TMXTiledMap* m_map;
     Controller* m_controller;
 
     CC_SYNTHESIZE_RETAIN(FSM*, m_fsm, FSM);
