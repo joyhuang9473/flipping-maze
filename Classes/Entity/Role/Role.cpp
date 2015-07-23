@@ -1,5 +1,5 @@
 #include "Role.h"
-#include "FSM.h"
+#include "../FSM.h"
 
 USING_NS_CC;
 
@@ -57,9 +57,19 @@ Point Role::getTagPosition() {
 }
 
 void Role::initFSM() {
+	/*
+	* State
+	*/
     this->m_fsm = FSM::create("idle");
-    this->addChild(this->m_fsm);
+	this->m_fsm->addState("walking");
+	this->m_fsm->addState("skilling");
+	this->m_fsm->addState("hurting");
+	this->m_fsm->addState("attacking");
+	this->m_fsm->addState("dead");
 
+	/*
+	* Enter function
+	*/
     auto onIdle = [this]() {
         this->m_sprite->stopAllActions();
 
@@ -131,6 +141,30 @@ void Role::initFSM() {
         this->m_sprite->runAction(seq);
     };
     this->m_fsm->setOnEnter("dead", onDead);
+
+	/*
+	* Event
+	*/
+	this->m_fsm->addEvent("walk", "idle", "walking")
+		->addEvent("skill", "idle", "skilling")
+		->addEvent("skill", "walking", "skilling")
+		->addEvent("hurt", "idle", "hurting")
+		->addEvent("hurt", "walking", "hurting")
+		->addEvent("attack", "idle", "attacking")
+		->addEvent("attack", "walking", "attacking")
+		->addEvent("die", "idle", "dead")
+		->addEvent("die", "walking", "dead")
+		->addEvent("die", "skilling", "dead")
+		->addEvent("die", "hurting", "dead")
+		->addEvent("die", "attacking", "dead")
+		->addEvent("stand", "walking", "idle")
+		->addEvent("stand", "skilling", "idle")
+		->addEvent("stand", "hurting", "idle")
+		->addEvent("stand", "attacking", "idle")
+		->addEvent("stand", "dead", "idle")
+		->addEvent("stand", "idle", "idle");
+
+	this->addChild(this->m_fsm);
 }
 
 BoundingBox Role::createBoundingBox(Point origin, Size size) {

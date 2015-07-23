@@ -144,7 +144,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\Classes\Controller\ContactListener.cpp" />
     <ClCompile Include="..\Classes\Controller\Controller.cpp" />
     <ClCompile Include="..\Classes\Controller\KeyboardController.cpp" />
-    <ClCompile Include="..\Classes\Entity\Role\FSM.cpp" />
+    <ClCompile Include="..\Classes\Entity\FSM.cpp" />
     <ClCompile Include="..\Classes\Entity\Role\Player.cpp" />
     <ClCompile Include="..\Classes\Entity\Role\Role.cpp" />
     <ClCompile Include="..\Classes\GameManager.cpp" />
@@ -166,7 +166,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\Classes\Controller\Controller.h" />
     <ClInclude Include="..\Classes\Controller\ControllerListener.h" />
     <ClInclude Include="..\Classes\Controller\KeyboardController.h" />
-    <ClInclude Include="..\Classes\Entity\Role\FSM.h" />
+    <ClInclude Include="..\Classes\Entity\FSM.h" />
     <ClInclude Include="..\Classes\Entity\Role\Player.h" />
     <ClInclude Include="..\Classes\Entity\Role\Role.h" />
     <ClInclude Include="..\Classes\GameManager.h" />

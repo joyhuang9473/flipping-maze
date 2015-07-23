@@ -76,3 +76,4 @@ void Player::setTagPosition(int x, int y) {
     Role::setTagPosition(x, y);
     this->setViewPointByPlayer();
 }
+

@@ -16,6 +16,7 @@ public:
     void setViewPointByPlayer();
 
     virtual void setTagPosition(int x, int y);
+
 };
 
 #endif

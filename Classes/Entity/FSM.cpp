@@ -11,7 +11,7 @@ FSM::FSM(std::string state, std::function<void()> onEnter) {
 FSM* FSM::create(std::string state, std::function<void()> onEnter) {
     FSM* fsm = new FSM(state, onEnter);
 
-    if (fsm && fsm->init()) {
+    if (fsm) {
         return fsm;
     }
 
@@ -102,44 +102,3 @@ std::string FSM::getCurrState() {
     return this->m_currentState;
 }
 
-bool FSM::init() {
-    this->addState("idle", [this]() {
-        log("enter idle");
-    });
-    this->addState("walking", [this]() {
-        log("enter walking");
-    });
-    this->addState("skilling", [this]() {
-        log("enter skilling");
-    });
-    this->addState("hurting", [this]() {
-        log("enter hurting");
-    });
-    this->addState("attacking", [this]() {
-        log("enter attacking");
-    });
-    this->addState("dead", [this]() {
-        log("enter dead");
-    });
-
-    this->addEvent("walk", "idle", "walking")
-    ->addEvent("skill", "idle", "skilling")
-    ->addEvent("skill", "walking", "skilling")
-    ->addEvent("hurt", "idle", "hurting")
-    ->addEvent("hurt", "walking", "hurting")
-    ->addEvent("attack", "idle", "attacking")
-    ->addEvent("attack", "walking", "attacking")
-    ->addEvent("die", "idle", "dead")
-    ->addEvent("die", "walking", "dead")
-    ->addEvent("die", "skilling", "dead")
-    ->addEvent("die", "hurting", "dead")
-    ->addEvent("die", "attacking", "dead")
-    ->addEvent("stand", "walking", "idle")
-    ->addEvent("stand", "skilling", "idle")
-    ->addEvent("stand", "hurting", "idle")
-    ->addEvent("stand", "attacking", "idle")
-    ->addEvent("stand", "dead", "idle")
-    ->addEvent("stand", "idle", "idle");
-    
-    return true;
-}

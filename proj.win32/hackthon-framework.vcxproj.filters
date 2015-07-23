@@ -90,9 +90,6 @@
     <ClCompile Include="..\Classes\Layer\GameLayer\GameLayer.cpp">
       <Filter>src\Layer\GameLayer</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Entity\Role\FSM.cpp">
-      <Filter>src\Entity\Role</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\Entity\Role\Role.cpp">
       <Filter>src\Entity\Role</Filter>
     </ClCompile>
@@ -119,6 +116,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\GameManager.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entity\FSM.cpp">
+      <Filter>src\Entity</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -152,9 +152,6 @@
     <ClInclude Include="..\Classes\Layer\GameLayer\GameLayer.h">
       <Filter>src\Layer\GameLayer</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Entity\Role\FSM.h">
-      <Filter>src\Entity\Role</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\Entity\Role\Role.h">
       <Filter>src\Entity\Role</Filter>
     </ClInclude>
@@ -181,6 +178,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameManager.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entity\FSM.h">
+      <Filter>src\Entity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
