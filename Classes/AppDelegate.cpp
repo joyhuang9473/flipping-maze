@@ -35,7 +35,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::create("Hckthon-framework");
+        glview = GLViewImpl::create("Hackthon-framework");
         director->setOpenGLView(glview);
     }
 
