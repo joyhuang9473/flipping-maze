@@ -24,10 +24,8 @@ public:
 
 private:
     Player* m_player;
-    ContactListener* m_contactListener;
 
     cocos2d::TMXTiledMap* m_map;
-
 };
 
 #endif
