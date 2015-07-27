@@ -10,8 +10,8 @@ public:
 
     virtual bool init();
     CREATE_FUNC(GameLayer);
-    void setPlayer(Player* player);
-	void bindRoleToMap(Role* role, cocos2d::TMXTiledMap* map);
+    //void setPlayer(Player* player);
+	//void bindRoleToMap(Role* role, cocos2d::TMXTiledMap* map);
 
 	void logic(float dt);
     
@@ -21,11 +21,7 @@ public:
 	bool collisionDetection(const BoundingBox &bodyBoxA, const BoundingBox &bodyBoxB);
 	void updateActionScope(float dt);
 
-
 private:
-    Player* m_player;
-    ContactListener* m_contactListener;
-
     cocos2d::TMXTiledMap* m_map;
 
 };

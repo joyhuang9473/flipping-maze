@@ -27,22 +27,17 @@ bool GameLayer::init() {
 
     // Map
     auto map = TMXTiledMap::create(GAMEMANAGER->getCurMapName());
-
-    // Player
-	auto player = Player::create();
-	this->setPlayer(player);
-
-	this->bindRoleToMap(player, map);
+	map->setScale(2);
+	map->setTileSize(map->getTileSize()*2);
 
 	this->m_map = map;
-	this->m_player = player;
 	this->addChild(this->m_map, -1);
-	this->addChild(this->m_player);
 
     this->schedule(schedule_selector(GameLayer::logic));
     return true;
 }
 
+/*
 void GameLayer::setPlayer(Player* player) {
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 
@@ -55,10 +50,13 @@ void GameLayer::setPlayer(Player* player) {
 	player->getFSM()->doEvent("stand");
 	player->setPosition(visibleSize.width / 2, visibleSize.height / 2);
 }
+*/
 
+/*
 void GameLayer::bindRoleToMap(Role* role, cocos2d::TMXTiledMap* map) {
 	role->setTiledMap(map);
 }
+*/
 
 void GameLayer::logic(float dt) {
 
