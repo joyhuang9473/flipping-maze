@@ -2,7 +2,7 @@
 #define __ROLE_H__
 
 #include "cocos2d.h"
-#include "FSM.h"
+#include "../FSM.h"
 #include "../../Controller/Controller.h"
 
 typedef struct _BoundingBox {

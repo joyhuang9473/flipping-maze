@@ -5,7 +5,6 @@
 
 class FSM : public cocos2d::Node {
 public:
-    bool init();
     FSM(std::string state, std::function<void()> onEnter = nullptr);
     static FSM* create(std::string state, std::function<void()> onEnter = nullptr);
 
