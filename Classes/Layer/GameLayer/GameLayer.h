@@ -21,9 +21,21 @@ public:
 	bool collisionDetection(const BoundingBox &bodyBoxA, const BoundingBox &bodyBoxB);
 	void updateActionScope(float dt);
 
+	void setListener();
+
+	bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event);
+	void onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* event);
+	void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event);
+
+	cocos2d::Vec2 boundLayerPos(cocos2d::Vec2 newPos);
+	void panForTranslation(cocos2d::Vec2 translation);
+
 private:
     cocos2d::TMXTiledMap* m_map;
 
+	cocos2d::EventListenerTouchOneByOne* m_touchListener;
+
+	cocos2d::Vec2 m_cursorPos;
 };
 
 #endif
