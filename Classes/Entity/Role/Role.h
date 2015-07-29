@@ -1,5 +1,5 @@
-#ifndef __ROLE_H__
-#define __ROLE_H__
+#ifndef __ROLE_ENTITY_H__
+#define __ROLE_ENTITY_H__
 
 #include "cocos2d.h"
 #include "../FSM.h"

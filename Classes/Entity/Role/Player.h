@@ -1,5 +1,5 @@
-#ifndef __HERO_ENTITY_H__
-#define __HERO_ENTITY_H__
+#ifndef __PLAYER_ENTITY_H__
+#define __PLAYER_ENTITY_H__
 
 #include "cocos2d.h"
 #include "Role.h"

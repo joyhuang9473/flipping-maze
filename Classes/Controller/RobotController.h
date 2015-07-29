@@ -1,5 +1,5 @@
-#ifndef __AI_CONTROLLER_H__
-#define __AI_CONTROLLER_H__
+#ifndef __ROBOT_CONTROLLER_H__
+#define __ROBOT_CONTROLLER_H__
 
 #include "cocos2d.h"
 #include "Controller.h"
