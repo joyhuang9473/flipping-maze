@@ -20,7 +20,6 @@ public:
     void updateExecute(float dt);
 
     void decide(const cocos2d::Vec2& targetPos);
-    void execute(const cocos2d::Vec2& targetPos);
 
 	void setRole(Role* role);
 	void setTarget(Role* role);

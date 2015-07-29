@@ -3,10 +3,10 @@
 USING_NS_CC;
 
 bool RobotController::init() {
-	this->m_role = nullptr;
-	this->m_target = nullptr;
+    this->m_role = nullptr;
+    this->m_target = nullptr;
 
-	this->setVelocityX(0);
+    this->setVelocityX(0);
     this->setVelocityY(0);
 
     this->m_eyeArea = 380;
@@ -15,7 +15,7 @@ bool RobotController::init() {
     this->m_moveDirection.y = 0;
 
     this->scheduleUpdate();
-	this->schedule(schedule_selector(RobotController::updateExecute));
+    this->schedule(schedule_selector(RobotController::updateExecute));
     return true;
 }
 
@@ -105,29 +105,20 @@ void RobotController::decide(const Vec2 &target) {
             this->m_role->getFSM()->doEvent("stand");
             break;
     }
-
-}
-
-void RobotController::execute(const cocos2d::Vec2& target) {
-    if (this->m_nextDecisionTime <= 0) {
-        this->decide(target);
-    } else {
-        --this->m_nextDecisionTime;
-    }
 }
 
 void RobotController::setRole(Role* role) {
-	this->m_role = role;
+    this->m_role = role;
 }
 
 void RobotController::setTarget(Role* role) {
-	this->m_target = role;
+    this->m_target = role;
 }
 
 Role* RobotController::getRole() {
-	return this->m_role;
+    return this->m_role;
 }
 
 Role* RobotController::getTarget() {
-	return this->m_target;
+    return this->m_target;
 }
