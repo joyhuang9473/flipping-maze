@@ -140,15 +140,19 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\Controller\PathController.cpp" />
     <ClCompile Include="..\Classes\Controller\RobotController.cpp" />
     <ClCompile Include="..\Classes\Controller\ContactListener.cpp" />
     <ClCompile Include="..\Classes\Controller\Controller.cpp" />
     <ClCompile Include="..\Classes\Controller\KeyboardController.cpp" />
     <ClCompile Include="..\Classes\Entity\FSM.cpp" />
+    <ClCompile Include="..\Classes\Entity\Role\Enemy.cpp" />
     <ClCompile Include="..\Classes\Entity\Role\Player.cpp" />
     <ClCompile Include="..\Classes\Entity\Role\Role.cpp" />
     <ClCompile Include="..\Classes\GameManager.cpp" />
     <ClCompile Include="..\Classes\Layer\GameLayer\GameLayer.cpp" />
+    <ClCompile Include="..\Classes\Layer\GameLayer\GroupEnemy.cpp" />
+    <ClCompile Include="..\Classes\Layer\GameLayer\GroupPath.cpp" />
     <ClCompile Include="..\Classes\Layer\GameLayer\VisibleRect.cpp" />
     <ClCompile Include="..\Classes\Layer\MenuLayer\MenuLayer.cpp" />
     <ClCompile Include="..\Classes\Scene\GameScene.cpp" />
@@ -161,16 +165,20 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\Controller\PathController.h" />
     <ClInclude Include="..\Classes\Controller\RobotController.h" />
     <ClInclude Include="..\Classes\Controller\ContactListener.h" />
     <ClInclude Include="..\Classes\Controller\Controller.h" />
     <ClInclude Include="..\Classes\Controller\ControllerListener.h" />
     <ClInclude Include="..\Classes\Controller\KeyboardController.h" />
     <ClInclude Include="..\Classes\Entity\FSM.h" />
+    <ClInclude Include="..\Classes\Entity\Role\Enemy.h" />
     <ClInclude Include="..\Classes\Entity\Role\Player.h" />
     <ClInclude Include="..\Classes\Entity\Role\Role.h" />
     <ClInclude Include="..\Classes\GameManager.h" />
     <ClInclude Include="..\Classes\Layer\GameLayer\GameLayer.h" />
+    <ClInclude Include="..\Classes\Layer\GameLayer\GroupEnemy.h" />
+    <ClInclude Include="..\Classes\Layer\GameLayer\GroupPath.h" />
     <ClInclude Include="..\Classes\Layer\GameLayer\VisibleRect.h" />
     <ClInclude Include="..\Classes\Layer\MenuLayer\MenuLayer.h" />
     <ClInclude Include="..\Classes\Scene\GameScene.h" />
@@ -203,6 +211,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <Image Include="..\Resources\Buttons\signStartEnable.png" />
     <Image Include="..\Resources\Characters\hero-kisi.png" />
     <Image Include="..\Resources\Map\floor.jpg" />
+    <Image Include="..\Resources\Other\soccerBall.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Resources\Characters\hero-kisi.plist" />

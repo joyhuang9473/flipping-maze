@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="15" height="30" tilewidth="32" tileheight="32" nextobjectid="1">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="15" height="30" tilewidth="32" tileheight="32" nextobjectid="81">
  <tileset firstgid="1" name="crawl-tiles" tilewidth="32" tileheight="32" spacing="2" margin="2">
   <image source="crawl-tiles.png" trans="ff3366" width="512" height="512"/>
  </tileset>
@@ -8,4 +8,62 @@
    eJyFlcEOwyAMQ/nvXdepQHtlv7tWIpL15tBDRDPq2AkuG6WUcUWdK58j/yZ77Ypdospzm/k213g3sLvkO+reeRe+NkPf6aihNV/QEetbYhhOjY/U7hMTeTW4bubGHl1Qh5tP5MdiX+NM+tpmEK/nk9Ws5V9PaKIvQoPyVsPLWTRT382TmCo9c/9I6juOJlzs3fmd8yD/jXsvMMQO6KXftB9qoyd1zc521Rd/c5p5Js5znK3zDz0R3KfhdXNTnp7wr771lS8dLrxN7Stf8Y6gT3i3uVr0PHXSG6HV3UXZnZTNSes9zSl0uHuS3/jqf+FJ4yp3uOy8f/1O+UM=
   </data>
  </layer>
+ <layer name="blocks" width="15" height="30">
+  <data encoding="base64" compression="zlib">
+   eJytlLkRwDAIBOm/AOp1oMTD3IdsRX6AWx7RVdV1ToPn5N/2TF8Xd9oymy1PV5YL41EcKgfHgeqTvKueIU3FtuFhPje6KP6mt4mdy0ndARUv1Z+xXb9YbMWc+P3BzGwUZzofTJfxp3OpaowY0n2X3pWEE9kl+k7jbed66HbYZvfdfNvM2ddaPUIIaE0=
+  </data>
+ </layer>
+ <objectgroup name="weapon">
+  <object id="1" name="1" x="80" y="16"/>
+  <object id="2" name="2" x="176" y="16"/>
+  <object id="3" name="3" x="304" y="16"/>
+  <object id="4" name="4" x="400" y="16"/>
+ </objectgroup>
+ <objectgroup name="path1">
+  <object id="33" name="0" x="241" y="959"/>
+  <object id="34" name="1" x="240" y="832"/>
+  <object id="35" name="2" x="243" y="768"/>
+  <object id="36" name="3" x="274" y="707"/>
+  <object id="37" name="4" x="323" y="613"/>
+  <object id="38" name="5" x="289" y="562"/>
+  <object id="39" name="6" x="208" y="559"/>
+  <object id="40" name="7" x="207" y="472"/>
+  <object id="41" name="8" x="262" y="355"/>
+  <object id="42" name="9" x="274" y="278"/>
+  <object id="43" name="10" x="208" y="237"/>
+  <object id="44" name="11" x="242" y="166"/>
+  <object id="45" name="12" x="302" y="99"/>
+  <object id="46" name="13" x="305" y="17"/>
+ </objectgroup>
+ <objectgroup name="path2">
+  <object id="47" name="0" x="418" y="955"/>
+  <object id="48" name="1" x="382" y="834"/>
+  <object id="49" name="2" x="435" y="769"/>
+  <object id="50" name="3" x="422" y="705"/>
+  <object id="51" name="4" x="324" y="611"/>
+  <object id="52" name="5" x="357" y="545"/>
+  <object id="53" name="6" x="367" y="468"/>
+  <object id="54" name="7" x="413" y="402"/>
+  <object id="55" name="8" x="359" y="352"/>
+  <object id="56" name="9" x="355" y="281"/>
+  <object id="57" name="10" x="433" y="261"/>
+  <object id="58" name="11" x="429" y="175"/>
+  <object id="59" name="12" x="389" y="126"/>
+  <object id="60" name="13" x="401" y="17"/>
+ </objectgroup>
+ <objectgroup name="path0">
+  <object id="67" name="0" x="64" y="957"/>
+  <object id="68" name="1" x="97" y="834"/>
+  <object id="69" name="2" x="65" y="770"/>
+  <object id="70" name="3" x="132" y="705"/>
+  <object id="71" name="4" x="146" y="610"/>
+  <object id="72" name="5" x="48" y="590"/>
+  <object id="73" name="6" x="46" y="400"/>
+  <object id="74" name="7" x="115" y="343"/>
+  <object id="75" name="8" x="172" y="288"/>
+  <object id="76" name="9" x="96" y="227"/>
+  <object id="77" name="10" x="36" y="168"/>
+  <object id="78" name="11" x="83" y="100"/>
+  <object id="79" name="12" x="82" y="17"/>
+ </objectgroup>
 </map>

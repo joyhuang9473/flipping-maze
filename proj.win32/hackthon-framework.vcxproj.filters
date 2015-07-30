@@ -120,6 +120,18 @@
     <ClCompile Include="..\Classes\Entity\FSM.cpp">
       <Filter>src\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Layer\GameLayer\GroupEnemy.cpp">
+      <Filter>src\Layer\GameLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Controller\PathController.cpp">
+      <Filter>src\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Layer\GameLayer\GroupPath.cpp">
+      <Filter>src\Layer\GameLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entity\Role\Enemy.cpp">
+      <Filter>src\Entity\Role</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -182,6 +194,18 @@
     <ClInclude Include="..\Classes\Entity\FSM.h">
       <Filter>src\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\Layer\GameLayer\GroupEnemy.h">
+      <Filter>src\Layer\GameLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Controller\PathController.h">
+      <Filter>src\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Layer\GameLayer\GroupPath.h">
+      <Filter>src\Layer\GameLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entity\Role\Enemy.h">
+      <Filter>src\Entity\Role</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">
@@ -206,6 +230,9 @@
     </Image>
     <Image Include="..\Resources\Characters\hero-kisi.png">
       <Filter>resource\Characters</Filter>
+    </Image>
+    <Image Include="..\Resources\Other\soccerBall.png">
+      <Filter>resource\Other</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

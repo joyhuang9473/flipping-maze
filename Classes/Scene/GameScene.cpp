@@ -15,6 +15,19 @@ bool GameScene::init() {
     return true;
 }
 
+Scene* GameScene::createWithPhysicsWorld() {
+	auto scene = GameScene::createWithPhysics();
+
+	scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+
+	auto layer = GameLayer::create();
+	layer->setPhysicsWorld(scene->getPhysicsWorld());
+	layer->initPhysics();
+
+	scene->addChild(layer);
+	return scene;
+}
+
 void GameScene::createCompleteDialog() {
     auto visibleSize = Director::getInstance()->getVisibleSize();
     auto label = Label::createWithTTF("Mission Complete", "Marker Felt.ttf", 72);

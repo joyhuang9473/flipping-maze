@@ -9,6 +9,8 @@ public:
 
     CREATE_FUNC(GameScene);
 
+	static cocos2d::Scene* createWithPhysicsWorld();
+
     void createCompleteDialog();
 
     void createFailedDialog();
