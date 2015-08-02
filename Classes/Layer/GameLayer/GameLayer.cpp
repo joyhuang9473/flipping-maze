@@ -42,7 +42,8 @@ bool GameLayer::init() {
     this->addEnemyWave();
 
     this->addChild(this->m_map, -1);
-    this->schedule(schedule_selector(GameLayer::logic));
+	this->schedule(schedule_selector(GameLayer::logic));
+	this->schedule(schedule_selector(GameLayer::updateDeadBody));
     return true;
 }
 
@@ -80,9 +81,9 @@ void GameLayer::initPhysics() {
                 }
 
                 PhysicsBody* body = PhysicsBody::createEdgeBox(sprite->getContentSize(), PhysicsMaterial(1.0f, 1.0f, 0.0f));
-                body->setContactTestBitmask(0xFFFFFFFF);
                 sprite->setPhysicsBody(body);
                 sprite->setPosition(sprite->getPosition() + sprite->getContentSize()/2);
+				sprite->setTag(GameLayer::EntityType::TYPE_BOUNDED);
             }
         }
     }
@@ -139,6 +140,34 @@ void GameLayer::onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event) {
     }
 }
 
+bool GameLayer::onContactBegin(cocos2d::PhysicsContact& contact) {
+	return true;
+}
+
+void GameLayer::onContactSeperate(cocos2d::PhysicsContact& contact) {
+	auto nodeA = contact.getShapeA()->getBody()->getNode();
+	auto nodeB = contact.getShapeB()->getBody()->getNode();
+
+	if (nodeA->getTag() == nodeB->getTag()) {
+		return;
+	}
+
+	Enemy* enemy = nullptr;
+
+	if (nodeA->getTag() == GameLayer::EntityType::TYPE_ENEMY) {
+		enemy = (Enemy*)nodeA;
+		enemy->beHit(1);
+	} else if (nodeB->getTag() == GameLayer::EntityType::TYPE_ENEMY) {
+		enemy = (Enemy*)nodeB;
+		enemy->beHit(1);
+	}
+
+	if (enemy->getFSM()->getCurrState() == "dead") {
+		this->destroyEntities.pushBack(enemy);
+	}
+
+}
+
 void GameLayer::setListener() {
     this->m_touchListener = EventListenerTouchOneByOne::create();
     this->m_touchListener->setSwallowTouches(true);
@@ -148,8 +177,13 @@ void GameLayer::setListener() {
     this->m_keyboardListener = EventListenerKeyboard::create();
     this->m_keyboardListener->onKeyPressed = CC_CALLBACK_2(GameLayer::onKeyPressed, this);
 
+	this->m_contactListener = EventListenerPhysicsContact::create();
+	this->m_contactListener->onContactBegin = CC_CALLBACK_1(GameLayer::onContactBegin, this);
+	this->m_contactListener->onContactSeperate = CC_CALLBACK_1(GameLayer::onContactSeperate, this);
+
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(this->m_touchListener, this);
-    Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(this->m_keyboardListener, this);
+	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(this->m_keyboardListener, this);
+	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(this->m_contactListener, this);
 }
 
 Vec2 GameLayer::boundLayerPos(Vec2 newPos) {
@@ -182,8 +216,14 @@ Vec2 GameLayer::mapTileCoordToPos(Vec2 coord) {
 void GameLayer::addBall(Vec2 position) {
     auto ball = Sprite::create("soccerBall.png");
     auto boundBody = PhysicsBody::createBox(ball->getContentSize(), PhysicsMaterial(1.0f, 1.0f, 0.0f));
-    ball->setPhysicsBody(boundBody);
+
+	boundBody->setCategoryBitmask(0x03);
+	boundBody->setCollisionBitmask(0x02);
+	boundBody->setContactTestBitmask(0xFFFFFFFF);
+
+	ball->setPhysicsBody(boundBody);
     ball->setPosition(position);
+	ball->setTag(GameLayer::EntityType::TYPE_WEAPON);
 
     this->addChild(ball);
 }
@@ -216,7 +256,13 @@ void GameLayer::addEnemyWave() {
 			enemy->setTiledMap(this->m_map);
 			enemy->setPosition(pathPoints.at(0));
 			enemy->setWithPhysics();
+
+			enemy->getPhysicsBody()->setCategoryBitmask(0x02);
+			enemy->getPhysicsBody()->setCollisionBitmask(0x01);
+			enemy->getPhysicsBody()->setContactTestBitmask(0xFFFFFFFF);
+
 			enemy->getFSM()->doEvent("stand");
+			enemy->setTag(GameLayer::EntityType::TYPE_ENEMY);
 
 			PathController* controller = PathController::create();
 			controller->setRole(enemy);
@@ -230,4 +276,15 @@ void GameLayer::addEnemyWave() {
 
     ++enemyWaveCounter;
     GAMEMANAGER->setEnemyWaveCounter(enemyWaveCounter);
+}
+
+void GameLayer::updateDeadBody(float dt) {
+	if (this->destroyEntities.size() <= 0) {
+		return;
+	}
+
+	for (int i = 0; i < this->destroyEntities.size(); i++) {
+		Node* node = this->destroyEntities.at(i);
+		this->removeChild(node);
+	}
 }

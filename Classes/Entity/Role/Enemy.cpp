@@ -23,10 +23,18 @@ bool Enemy::init() {
     // Animation
     Animation* standAnim = AnimationUtil::createAnimWithFrameName(StringUtils::format("%s-idle", spName.c_str()).c_str());
     Animation* moveAnim = AnimationUtil::createAnimWithFrameName(StringUtils::format("%s-move", spName.c_str()).c_str());
-    
+	Animation* injuredAnim = AnimationUtil::createAnimWithFrameName(StringUtils::format("%s-hurt", spName.c_str()).c_str());
+	Animation* dieAnim = AnimationUtil::createAnimWithFrameName(StringUtils::format("%s-die", spName.c_str()).c_str());
+
+	// Basic attribute
+	this->setHp(1);
+	this->setMaxHp(1);
+
     this->setStandAction(standAnim);
     this->setMoveAction(moveAnim);
-    
+	this->setInjuredAction(injuredAnim);
+	this->setDieAction(dieAnim);
+
     return true;
 }
 

@@ -18,7 +18,7 @@ bool GameScene::init() {
 Scene* GameScene::createWithPhysicsWorld() {
 	auto scene = GameScene::createWithPhysics();
 
-	scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+	//scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
 
 	auto layer = GameLayer::create();
 	layer->setPhysicsWorld(scene->getPhysicsWorld());

@@ -15,6 +15,9 @@ Role::Role() {
     this->m_skillAction = nullptr;
     this->m_standAction = nullptr;
 
+	this->m_hp = 0;
+	this->m_maxHp = 0;
+
     this->initFSM();
     this->scheduleUpdate();
 }
@@ -134,7 +137,7 @@ void Role::initFSM() {
 
         auto animate = Animate::create(this->m_dieAction);
         auto callbackFunc = CallFunc::create([this]() {
-            // None
+			this->m_controller = nullptr;
         });
         auto seq = Sequence::create(animate, callbackFunc, nullptr);
         seq->setTag(AnimationType::DEAD);
@@ -182,8 +185,19 @@ void Role::update(float dt) {
 	}
 
 	this->m_sprite->setFlippedX(this->getDirection());
+
+	if (this->m_hp <= 0) {
+		this->getFSM()->doEvent("die");
+	}
 }
 
 void Role::updateBoxes() {
     this->m_bodyBox.actual.origin = this->getPosition() + this->m_bodyBox.original.origin;
+}
+
+void Role::beHit(float attack) {
+	if (!this->m_fsm->doEvent("hurt")) return;
+
+	this->m_hp = this->m_hp - attack;
+	if (this->m_hp < 0) this->m_hp = 0;
 }

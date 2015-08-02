@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="15" height="30" tilewidth="32" tileheight="32" nextobjectid="81">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="15" height="30" tilewidth="32" tileheight="32" nextobjectid="87">
  <tileset firstgid="1" name="crawl-tiles" tilewidth="32" tileheight="32" spacing="2" margin="2">
   <image source="crawl-tiles.png" trans="ff3366" width="512" height="512"/>
  </tileset>
@@ -37,19 +37,21 @@
  </objectgroup>
  <objectgroup name="path2">
   <object id="47" name="0" x="418" y="955"/>
-  <object id="48" name="1" x="382" y="834"/>
-  <object id="49" name="2" x="435" y="769"/>
-  <object id="50" name="3" x="422" y="705"/>
-  <object id="51" name="4" x="324" y="611"/>
-  <object id="52" name="5" x="357" y="545"/>
-  <object id="53" name="6" x="367" y="468"/>
-  <object id="54" name="7" x="413" y="402"/>
-  <object id="55" name="8" x="359" y="352"/>
-  <object id="56" name="9" x="355" y="281"/>
-  <object id="57" name="10" x="433" y="261"/>
-  <object id="58" name="11" x="429" y="175"/>
-  <object id="59" name="12" x="389" y="126"/>
-  <object id="60" name="13" x="401" y="17"/>
+  <object id="48" name="1" x="403.194" y="890.22"/>
+  <object id="49" name="2" x="382" y="834"/>
+  <object id="50" name="3" x="435" y="769"/>
+  <object id="51" name="4" x="422" y="705"/>
+  <object id="52" name="5" x="324" y="611"/>
+  <object id="53" name="6" x="357" y="545"/>
+  <object id="54" name="7" x="367" y="468"/>
+  <object id="55" name="8" x="413" y="402"/>
+  <object id="56" name="9" x="359" y="352"/>
+  <object id="57" name="10" x="355" y="281"/>
+  <object id="58" name="11" x="433" y="261"/>
+  <object id="59" name="12" x="429" y="175"/>
+  <object id="60" name="13" x="389" y="126"/>
+  <object id="61" name="14" x="401" y="17"/>
+
  </objectgroup>
  <objectgroup name="path0">
   <object id="67" name="0" x="64" y="957"/>
