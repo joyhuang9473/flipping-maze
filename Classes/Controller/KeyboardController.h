@@ -1,5 +1,5 @@
-#ifndef __OPERATE_CONTROLLER_H__
-#define __OPERATE_CONTROLLER_H__
+#ifndef __KEYBOARD_CONTROLLER_H__
+#define __KEYBOARD_CONTROLLER_H__
 
 #include "cocos2d.h"
 #include "Controller.h"

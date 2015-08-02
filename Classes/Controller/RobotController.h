@@ -1,5 +1,5 @@
-#ifndef __AI_CONTROLLER_H__
-#define __AI_CONTROLLER_H__
+#ifndef __ROBOT_CONTROLLER_H__
+#define __ROBOT_CONTROLLER_H__
 
 #include "cocos2d.h"
 #include "Controller.h"
@@ -20,7 +20,6 @@ public:
     void updateExecute(float dt);
 
     void decide(const cocos2d::Vec2& targetPos);
-    void execute(const cocos2d::Vec2& targetPos);
 
 	void setRole(Role* role);
 	void setTarget(Role* role);
