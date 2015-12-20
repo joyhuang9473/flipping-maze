@@ -29,8 +29,8 @@ bool MenuLayer::init() {
                                            "signExitEnable.png",
                                            CC_CALLBACK_1(MenuLayer::menuCloseCallback, this));
 
-    startItem->setPosition(Vec2(origin.x + visibleSize.width/2, origin.y + visibleSize.height/3));
-    closeItem->setPosition(Vec2(origin.x + visibleSize.width/2 + closeItem->getContentSize().width*2, origin.y + visibleSize.height/3));
+    startItem->setPosition(Vec2(origin.x + visibleSize.width/2 - startItem->getContentSize().width, origin.y + visibleSize.height/3));
+    closeItem->setPosition(Vec2(origin.x + visibleSize.width/2 + closeItem->getContentSize().width, origin.y + visibleSize.height/3));
 
 	MenuItems.pushBack(startItem);
     MenuItems.pushBack(closeItem);
