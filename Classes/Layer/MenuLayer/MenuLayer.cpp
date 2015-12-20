@@ -39,7 +39,7 @@ bool MenuLayer::init() {
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
-    auto label = Label::createWithTTF("Akatsuki Hackthon Demo", "Marker Felt.ttf", 72);
+    auto label = Label::createWithTTF("Hackathon Application Demo", "Marker Felt.ttf", 72);
     label->setPosition(Vec2(origin.x + visibleSize.width/2,
                             origin.y + visibleSize.height - 2*label->getContentSize().height));
     this->addChild(label, 1);
