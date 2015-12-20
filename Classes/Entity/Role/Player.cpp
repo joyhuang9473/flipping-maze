@@ -53,8 +53,8 @@ void Player::setViewPointByPlayer() {
 
     Size mapTiledNum = this->m_map->getMapSize();
     Size tiledSize = this->m_map->getTileSize();
-    Size mapSize = Size::Size(mapTiledNum.width*tiledSize.width,
-                              mapTiledNum.height*tiledSize.height);
+    Size mapSize = Size(mapTiledNum.width*tiledSize.width,
+                        mapTiledNum.height*tiledSize.height);
 
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Point spritePos = this->getPosition();
