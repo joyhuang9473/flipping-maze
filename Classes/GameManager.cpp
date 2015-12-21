@@ -8,11 +8,11 @@ GameManager::GameManager() {
 	std::vector<std::string> resourcePathes;
 
 	resourcePathes.push_back("Audio");
-	resourcePathes.push_back("Buttons");
-	resourcePathes.push_back("Characters");
-	resourcePathes.push_back("Fonts");
+	resourcePathes.push_back("Button");
+	resourcePathes.push_back("Character");
+	resourcePathes.push_back("Font");
 	resourcePathes.push_back("Map");
-	resourcePathes.push_back("Settings");
+	resourcePathes.push_back("Setting");
 	resourcePathes.push_back("Other");
 
 	FileUtils::getInstance()->setSearchPaths(resourcePathes);
