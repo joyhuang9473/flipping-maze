@@ -129,7 +129,9 @@ Reference
 -----------------------
 
 [1]. Cocos2d-x, "[Cocos2d-x Programmers Guide v3.9](http://www.cocos2d-x.org/programmersguide/)", 2015.
+
 [2]. 鍾迪龍, "[Cocos2d-x 遊戲開發之旅](http://product.dangdang.com/23321791.html#catalog)", 電子工業出版社, 2013.
+
 [3]. douxt, "[Cocos2dx 3.2 横版过关游戏Brave学习笔记](http://www.tairan.com/archives/8344/)", 泰然網, 2014.
 
 Credit
