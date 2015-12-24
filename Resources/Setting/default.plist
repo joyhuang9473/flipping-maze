@@ -12,7 +12,7 @@
 	<key>resources</key>
 	<dict>
 		<key>map</key>
-		<string>floor.tmx</string>
+		<string>dungeon.tmx</string>
 	</dict>
 </dict>
 </plist>

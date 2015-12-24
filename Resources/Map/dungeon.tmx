@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="15" height="30" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="crawl-tiles" tilewidth="32" tileheight="32" spacing="2" margin="2">
+  <image source="crawl-tiles.png" trans="ff3366" width="512" height="512"/>
+ </tileset>
+ <layer name="tiles" width="15" height="30">
+  <data encoding="base64" compression="zlib">
+   eJyFlcEOwyAMQ/nvXdepQHtlv7tWIpL15tBDRDPq2AkuG6WUcUWdK58j/yZ77Ypdospzm/k213g3sLvkO+reeRe+NkPf6aihNV/QEetbYhhOjY/U7hMTeTW4bubGHl1Qh5tP5MdiX+NM+tpmEK/nk9Ws5V9PaKIvQoPyVsPLWTRT382TmCo9c/9I6juOJlzs3fmd8yD/jXsvMMQO6KXftB9qoyd1zc521Rd/c5p5Js5znK3zDz0R3KfhdXNTnp7wr771lS8dLrxN7Stf8Y6gT3i3uVr0PHXSG6HV3UXZnZTNSes9zSl0uHuS3/jqf+FJ4yp3uOy8f/1O+UM=
+  </data>
+ </layer>
+</map>
