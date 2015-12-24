@@ -1,7 +1,13 @@
 bin/*
 CMakeLists.txt
 cocos2d/*
-proj.android/*
+proj.android/assets/*
+proj.android/bin/*
+proj.android/gen/*
+proj.android/libs/*
+proj.android/obj/*
+proj.android/local.properties
+proj.android-studio/*
 proj.ios_mac/build/*
 proj.linux/*
 proj.win32/*.opensdf
@@ -9,5 +15,4 @@ proj.win32/*.sdf
 proj.win32/*.suo
 proj.win32/Debug.win32/*
 proj.win8.1-universal/*
-proj.wp8-xaml/*
 .*

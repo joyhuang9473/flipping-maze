@@ -27,7 +27,7 @@ std::vector<std::string> StringUtil::split(const char* srcStr, const char* sSep)
 
     int size = strlen(srcStr);
 
-    std::string str = StringUtils::format(srcStr);
+    std::string str = StringUtils::format("%s", srcStr);
 
     int startIndex = 0;
     int endIndex = 0;

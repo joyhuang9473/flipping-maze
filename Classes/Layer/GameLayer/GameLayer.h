@@ -7,11 +7,11 @@
 
 class GameLayer : public cocos2d::Layer {
 public:
-	enum EntityType {
-		TYPE_WEAPON,
-		TYPE_BOUNDED,
-		TYPE_ENEMY
-	};
+    enum EntityType {
+        TYPE_WEAPON,
+        TYPE_BOUNDED,
+        TYPE_ENEMY
+    };
 
     virtual bool init();
     CREATE_FUNC(GameLayer);
@@ -31,8 +31,8 @@ public:
 
     void onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
 
-	bool onContactBegin(cocos2d::PhysicsContact& contact);
-	void onContactSeperate(cocos2d::PhysicsContact& contact);
+    bool onContactBegin(cocos2d::PhysicsContact& contact);
+    void onContactSeperate(cocos2d::PhysicsContact& contact);
 
     cocos2d::Vec2 boundLayerPos(cocos2d::Vec2 newPos);
     void panForTranslation(cocos2d::Vec2 translation);
@@ -44,16 +44,16 @@ public:
     void addBall(cocos2d::Vec2 position);
     void addEnemyWave();
 
-	void updateDeadBody(float dt);
+    void updateDeadBody(float dt);
 
 private:
     cocos2d::TMXTiledMap* m_map;
 
     cocos2d::EventListenerTouchOneByOne* m_touchListener;
 
-	cocos2d::EventListenerKeyboard* m_keyboardListener;
+    cocos2d::EventListenerKeyboard* m_keyboardListener;
 
-	cocos2d::EventListenerPhysicsContact* m_contactListener;
+    cocos2d::EventListenerPhysicsContact* m_contactListener;
 
     cocos2d::Vec2 m_cursorPos;
 
@@ -63,7 +63,7 @@ private:
 
     bool isInterrupted;
 
-	cocos2d::Vector<cocos2d::Node*> destroyEntities;
+    cocos2d::Vector<cocos2d::Node*> destroyEntities;
 
 };
 

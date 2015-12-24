@@ -38,7 +38,7 @@ void FSM::printState() {
     log("FSM::printState: list of states");
 
     for (auto iter = this->m_states.begin() ; iter != this->m_states.end() ; iter++) {
-        log(iter->c_str());
+        log("%s", iter->c_str());
     }
 }
 

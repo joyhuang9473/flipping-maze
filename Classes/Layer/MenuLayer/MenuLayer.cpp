@@ -29,8 +29,8 @@ bool MenuLayer::init() {
                                            "signExitEnable.png",
                                            CC_CALLBACK_1(MenuLayer::menuCloseCallback, this));
 
-    startItem->setPosition(Vec2(origin.x + visibleSize.width/2, origin.y + visibleSize.height/3));
-    closeItem->setPosition(Vec2(origin.x + visibleSize.width/2 + closeItem->getContentSize().width*2, origin.y + visibleSize.height/3));
+    startItem->setPosition(Vec2(origin.x + visibleSize.width/2 - startItem->getContentSize().width, origin.y + visibleSize.height/3));
+    closeItem->setPosition(Vec2(origin.x + visibleSize.width/2 + closeItem->getContentSize().width, origin.y + visibleSize.height/3));
 
 	MenuItems.pushBack(startItem);
     MenuItems.pushBack(closeItem);
@@ -39,7 +39,7 @@ bool MenuLayer::init() {
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
-    auto label = Label::createWithTTF("Akatsuki Hackthon Demo", "Marker Felt.ttf", 72);
+    auto label = Label::createWithTTF("Flipping Maze", "Marker Felt.ttf", 72);
     label->setPosition(Vec2(origin.x + visibleSize.width/2,
                             origin.y + visibleSize.height - 2*label->getContentSize().height));
     this->addChild(label, 1);
