@@ -82,7 +82,7 @@ void GameLayer::initPhysics() {
 
                 PhysicsBody* body = PhysicsBody::createEdgeBox(sprite->getContentSize(), PhysicsMaterial(1.0f, 1.0f, 0.0f));
                 sprite->setPhysicsBody(body);
-                sprite->setPosition(sprite->getPosition() + sprite->getContentSize()/2);
+                sprite->setPosition(sprite->getPosition());
                 sprite->setTag(GameLayer::EntityType::TYPE_BOUNDED);
             }
         }

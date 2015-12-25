@@ -5,7 +5,7 @@
  </tileset>
  <layer name="tiles" width="15" height="30">
   <data encoding="base64" compression="zlib">
-   eJyFlcEOwyAMQ/nvXdepQHtlv7tWIpL15tBDRDPq2AkuG6WUcUWdK58j/yZ77Ypdospzm/k213g3sLvkO+reeRe+NkPf6aihNV/QEetbYhhOjY/U7hMTeTW4bubGHl1Qh5tP5MdiX+NM+tpmEK/nk9Ws5V9PaKIvQoPyVsPLWTRT382TmCo9c/9I6juOJlzs3fmd8yD/jXsvMMQO6KXftB9qoyd1zc521Rd/c5p5Js5znK3zDz0R3KfhdXNTnp7wr771lS8dLrxN7Stf8Y6gT3i3uVr0PHXSG6HV3UXZnZTNSes9zSl0uHuS3/jqf+FJ4yp3uOy8f/1O+UM=
+   eJy1VO0OgCAI9OGr5dc7V5tsjnFwrvpxswTkDtAzpXTeyGPV35GtOL5l/O9j1b4R6nReMeKrE9sNjs+6TYjyHyrXHKPrYPGxfN6ikX4d7O8Dep/pD9LTgK2rvEw9PA4oXuYMaW7k+bMd3YHVGX7imFmLepwdezZ82Lp6uhitKzOOzrP0ii/qqQfvXfgKwou9j6IHcdN1jDQUIwbx6Yt9YrV7EB5WXj0Hq3fqD1xIeO+Y
   </data>
  </layer>
  <layer name="blocks" width="15" height="30">
@@ -51,7 +51,6 @@
   <object id="59" name="12" x="429" y="175"/>
   <object id="60" name="13" x="389" y="126"/>
   <object id="61" name="14" x="401" y="17"/>
-
  </objectgroup>
  <objectgroup name="path0">
   <object id="67" name="0" x="64" y="957"/>
