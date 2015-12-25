@@ -40,7 +40,7 @@ public:
     BoundingBox createBoundingBox(cocos2d::Point origin, cocos2d::Size size);
     void updateBoxes();
 
-	void beHit(float attack);
+    void beHit(float attack);
 
 protected:
     cocos2d::Sprite* m_sprite;
@@ -59,8 +59,8 @@ protected:
     CC_SYNTHESIZE(bool, m_direction, Direction);
     CC_SYNTHESIZE(BoundingBox, m_bodyBox, BodyBox);
 
-	CC_SYNTHESIZE(int, m_hp, Hp);
-	CC_SYNTHESIZE(int, m_maxHp, MaxHp);
+    CC_SYNTHESIZE(int, m_hp, Hp);
+    CC_SYNTHESIZE(int, m_maxHp, MaxHp);
 };
 
 #endif

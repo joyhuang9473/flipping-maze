@@ -16,16 +16,16 @@ bool GameScene::init() {
 }
 
 Scene* GameScene::createWithPhysicsWorld() {
-	auto scene = GameScene::createWithPhysics();
+    auto scene = GameScene::createWithPhysics();
 
-	//scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+    //scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
 
-	auto layer = GameLayer::create();
-	layer->setPhysicsWorld(scene->getPhysicsWorld());
-	layer->initPhysics();
+    auto layer = GameLayer::create();
+    layer->setPhysicsWorld(scene->getPhysicsWorld());
+    layer->initPhysics();
 
-	scene->addChild(layer);
-	return scene;
+    scene->addChild(layer);
+    return scene;
 }
 
 void GameScene::createCompleteDialog() {

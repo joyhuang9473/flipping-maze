@@ -38,42 +38,42 @@ void GameManager::readStageInfo(const std::string plistpath) {
         this->stageInfo = dict["stageInfo"].asValueMap();
     } while (0);
 
-	// Resource
-	this->setCurMapName(this->resources["map"].asString());
+    // Resource
+    this->setCurMapName(this->resources["map"].asString());
 
-	// StageInfo
+    // StageInfo
     this->setCurStageFile(this->stageInfo["curStage"].asString());
     this->setNextStageFile(this->stageInfo["nextStage"].asString());
     this->setPlayerLife(this->stageInfo["playerLife"].asInt());
 
     ValueMap& waveDict = this->stageInfo["wave"].asValueMap();
 
-	for (auto waveIter = waveDict.begin(); waveIter != waveDict.end(); ++waveIter) {
-		ValueMap& waveDict = waveIter->second.asValueMap();
-		ValueMap& wavePathDict = waveDict["path"].asValueMap();
-		Vector<GroupEnemy*> wavePaths;
+    for (auto waveIter = waveDict.begin(); waveIter != waveDict.end(); ++waveIter) {
+        ValueMap& waveDict = waveIter->second.asValueMap();
+        ValueMap& wavePathDict = waveDict["path"].asValueMap();
+        Vector<GroupEnemy*> wavePaths;
 
-		for (auto wavePathIter = wavePathDict.begin(); wavePathIter != wavePathDict.end(); ++wavePathIter) {
-			ValueMap& wavePathDict = wavePathIter->second.asValueMap();
-			auto type1Num = wavePathDict["type1Num"].asInt();
-			auto type2Num = wavePathDict["type2Num"].asInt();
-			auto type1Hp = wavePathDict["type1Hp"].asInt();
-			auto type2Hp = wavePathDict["type2Hp"].asInt();
+        for (auto wavePathIter = wavePathDict.begin(); wavePathIter != wavePathDict.end(); ++wavePathIter) {
+            ValueMap& wavePathDict = wavePathIter->second.asValueMap();
+            auto type1Num = wavePathDict["type1Num"].asInt();
+            auto type2Num = wavePathDict["type2Num"].asInt();
+            auto type1Hp = wavePathDict["type1Hp"].asInt();
+            auto type2Hp = wavePathDict["type2Hp"].asInt();
 
-			GroupEnemy* groupEnemy = GroupEnemy::create()->initGroupEnemy(type1Num, type1Hp, type2Num, type2Hp);
-			wavePaths.pushBack(groupEnemy);
+            GroupEnemy* groupEnemy = GroupEnemy::create()->initGroupEnemy(type1Num, type1Hp, type2Num, type2Hp);
+            wavePaths.pushBack(groupEnemy);
 
-			this->numsOfEnemy += type1Num + type2Num;
-		}
+            this->numsOfEnemy += type1Num + type2Num;
+        }
 
-		GroupPath* groupPath = GroupPath::create()->initGroupPath(wavePaths, waveDict["waitTime"].asInt());
-		this->waveVector.pushBack(groupPath);
-	}
+        GroupPath* groupPath = GroupPath::create()->initGroupPath(wavePaths, waveDict["waitTime"].asInt());
+        this->waveVector.pushBack(groupPath);
+    }
 
 }
 
 void GameManager::clear() {
-	this->waveVector.clear();
+    this->waveVector.clear();
     this->resources.clear();
     this->stageInfo.clear();
 

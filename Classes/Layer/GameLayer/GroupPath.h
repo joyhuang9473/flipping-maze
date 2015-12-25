@@ -7,12 +7,12 @@
 class GroupPath : public cocos2d::Node {
 public:
     virtual bool init();
-	GroupPath* initGroupPath(cocos2d::Vector<GroupEnemy*> paths, int waitTime);
-	CREATE_FUNC(GroupPath);
+    GroupPath* initGroupPath(cocos2d::Vector<GroupEnemy*> paths, int waitTime);
+    CREATE_FUNC(GroupPath);
 
 private:
-	CC_SYNTHESIZE(cocos2d::Vector<GroupEnemy*>, paths, Paths);
-	CC_SYNTHESIZE(int, waitTime, WaitTime);
+    CC_SYNTHESIZE(cocos2d::Vector<GroupEnemy*>, paths, Paths);
+    CC_SYNTHESIZE(int, waitTime, WaitTime);
 };
 
 #endif

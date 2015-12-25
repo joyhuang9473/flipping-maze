@@ -5,7 +5,7 @@ USING_NS_CC;
 bool PathController::init() {
     this->m_role = nullptr;
 
-	this->m_pointCounter = 0;
+    this->m_pointCounter = 0;
 
     this->m_eyeArea = 380;
     this->m_moveDirection.x = 0;
@@ -17,7 +17,7 @@ bool PathController::init() {
     this->setVelocityY(0);
 
     this->scheduleUpdate();
-	this->schedule(schedule_selector(PathController::updateExecute));
+    this->schedule(schedule_selector(PathController::updateExecute));
 
     return true;
 }
@@ -54,14 +54,14 @@ Role* PathController::getRole() {
 }
 
 Vec2 PathController::getCurrentPathPoint() {
-	return this->m_pathPoints.at(this->m_pointCounter);
+    return this->m_pathPoints.at(this->m_pointCounter);
 }
 
 void PathController::nextPathPoint() {
-	int lastPathPoint = (int)this->m_pathPoints.size() - 1;
+    int lastPathPoint = (int)this->m_pathPoints.size() - 1;
 
-	if (this->m_pointCounter < lastPathPoint) {
-		++this->m_pointCounter;
+    if (this->m_pointCounter < lastPathPoint) {
+        ++this->m_pointCounter;
     }
 }
 
@@ -81,7 +81,7 @@ void PathController::decide() {
        if (distance < this->m_eyeArea) {
            this->m_aiState = (fabsf(location.y - target.y) < 5) ? AI_REACH : AI_PURSUIT;
        } else {
-		 this->m_aiState = (CCRANDOM_0_1() > 0.5f) ? AI_PURSUIT : AI_PATROL;
+         this->m_aiState = (CCRANDOM_0_1() > 0.5f) ? AI_PURSUIT : AI_PATROL;
        }
     }
 

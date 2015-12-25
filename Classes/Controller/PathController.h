@@ -14,26 +14,26 @@ public:
         AI_PURSUIT
     };
 
-	CREATE_FUNC(PathController);
+    CREATE_FUNC(PathController);
     virtual bool init();
     virtual void update(float dt);
     void updateExecute(float dt);
 
     void decide();
 
-	void setRole(Role* role);
-	Role* getRole();
+    void setRole(Role* role);
+    Role* getRole();
 
     cocos2d::Vec2 getCurrentPathPoint();
     void nextPathPoint();
 
 private:
-	Role* m_role;
+    Role* m_role;
 
     CC_SYNTHESIZE(int, m_VelocityX, VelocityX);
     CC_SYNTHESIZE(int, m_VelocityY, VelocityY);
 
-	CC_SYNTHESIZE(std::vector<cocos2d::Vec2>, m_pathPoints, PathPoints);
+    CC_SYNTHESIZE(std::vector<cocos2d::Vec2>, m_pathPoints, PathPoints);
     int m_pointCounter;
 
     CC_SYNTHESIZE(cocos2d::Vec2, m_moveDirection, MoveDirection);

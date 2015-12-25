@@ -7,15 +7,15 @@
 class Enemy : public Role {
 public:
 
-	Enemy();
-	~Enemy();
+    Enemy();
+    ~Enemy();
 
-	virtual bool init();
-	CREATE_FUNC(Enemy);
+    virtual bool init();
+    CREATE_FUNC(Enemy);
 
     virtual void setTagPosition(int x, int y);
 
-	void setWithPhysics();
+    void setWithPhysics();
 };
 
 #endif

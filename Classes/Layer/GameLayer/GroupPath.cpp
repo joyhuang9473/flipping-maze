@@ -7,7 +7,7 @@ bool GroupPath::init() {
 }
 
 GroupPath* GroupPath::initGroupPath(Vector<GroupEnemy*> wavePaths, int waitTime) {
-	this->paths = wavePaths;
-	this->waitTime = waitTime;
+    this->paths = wavePaths;
+    this->waitTime = waitTime;
     return this;
 }
