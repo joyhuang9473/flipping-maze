@@ -15,8 +15,8 @@ Role::Role() {
     this->m_skillAction = nullptr;
     this->m_standAction = nullptr;
 
-	this->m_hp = 0;
-	this->m_maxHp = 0;
+    this->m_hp = 0;
+    this->m_maxHp = 0;
 
     this->initFSM();
     this->scheduleUpdate();
@@ -47,7 +47,7 @@ Controller* Role::getController() {
 }
 
 void Role::setTiledMap(cocos2d::TMXTiledMap* map) {
-	this->m_map = map;
+    this->m_map = map;
 }
 
 void Role::setTagPosition(int x, int y) {
@@ -60,19 +60,19 @@ Point Role::getTagPosition() {
 }
 
 void Role::initFSM() {
-	/*
-	* State
-	*/
+    /*
+    * State
+    */
     this->m_fsm = FSM::create("idle");
-	this->m_fsm->addState("walking");
-	this->m_fsm->addState("skilling");
-	this->m_fsm->addState("hurting");
-	this->m_fsm->addState("attacking");
-	this->m_fsm->addState("dead");
+    this->m_fsm->addState("walking");
+    this->m_fsm->addState("skilling");
+    this->m_fsm->addState("hurting");
+    this->m_fsm->addState("attacking");
+    this->m_fsm->addState("dead");
 
-	/*
-	* Enter function
-	*/
+    /*
+    * Enter function
+    */
     auto onIdle = [this]() {
         this->m_sprite->stopAllActions();
 
@@ -137,7 +137,7 @@ void Role::initFSM() {
 
         auto animate = Animate::create(this->m_dieAction);
         auto callbackFunc = CallFunc::create([this]() {
-			this->m_controller = nullptr;
+            this->m_controller = nullptr;
         });
         auto seq = Sequence::create(animate, callbackFunc, nullptr);
         seq->setTag(AnimationType::DEAD);
@@ -145,29 +145,29 @@ void Role::initFSM() {
     };
     this->m_fsm->setOnEnter("dead", onDead);
 
-	/*
-	* Event
-	*/
-	this->m_fsm->addEvent("walk", "idle", "walking")
-		->addEvent("skill", "idle", "skilling")
-		->addEvent("skill", "walking", "skilling")
-		->addEvent("hurt", "idle", "hurting")
-		->addEvent("hurt", "walking", "hurting")
-		->addEvent("attack", "idle", "attacking")
-		->addEvent("attack", "walking", "attacking")
-		->addEvent("die", "idle", "dead")
-		->addEvent("die", "walking", "dead")
-		->addEvent("die", "skilling", "dead")
-		->addEvent("die", "hurting", "dead")
-		->addEvent("die", "attacking", "dead")
-		->addEvent("stand", "walking", "idle")
-		->addEvent("stand", "skilling", "idle")
-		->addEvent("stand", "hurting", "idle")
-		->addEvent("stand", "attacking", "idle")
-		->addEvent("stand", "dead", "idle")
-		->addEvent("stand", "idle", "idle");
+    /*
+    * Event
+    */
+    this->m_fsm->addEvent("walk", "idle", "walking")
+        ->addEvent("skill", "idle", "skilling")
+        ->addEvent("skill", "walking", "skilling")
+        ->addEvent("hurt", "idle", "hurting")
+        ->addEvent("hurt", "walking", "hurting")
+        ->addEvent("attack", "idle", "attacking")
+        ->addEvent("attack", "walking", "attacking")
+        ->addEvent("die", "idle", "dead")
+        ->addEvent("die", "walking", "dead")
+        ->addEvent("die", "skilling", "dead")
+        ->addEvent("die", "hurting", "dead")
+        ->addEvent("die", "attacking", "dead")
+        ->addEvent("stand", "walking", "idle")
+        ->addEvent("stand", "skilling", "idle")
+        ->addEvent("stand", "hurting", "idle")
+        ->addEvent("stand", "attacking", "idle")
+        ->addEvent("stand", "dead", "idle")
+        ->addEvent("stand", "idle", "idle");
 
-	this->addChild(this->m_fsm);
+    this->addChild(this->m_fsm);
 }
 
 BoundingBox Role::createBoundingBox(Point origin, Size size) {
@@ -180,15 +180,15 @@ BoundingBox Role::createBoundingBox(Point origin, Size size) {
 }
 
 void Role::update(float dt) {
-	if (this->m_sprite == nullptr) {
-		return;
-	}
+    if (this->m_sprite == nullptr) {
+        return;
+    }
 
-	this->m_sprite->setFlippedX(this->getDirection());
+    this->m_sprite->setFlippedX(this->getDirection());
 
-	if (this->m_hp <= 0) {
-		this->getFSM()->doEvent("die");
-	}
+    if (this->m_hp <= 0) {
+        this->getFSM()->doEvent("die");
+    }
 }
 
 void Role::updateBoxes() {
@@ -196,8 +196,8 @@ void Role::updateBoxes() {
 }
 
 void Role::beHit(float attack) {
-	if (!this->m_fsm->doEvent("hurt")) return;
+    if (!this->m_fsm->doEvent("hurt")) return;
 
-	this->m_hp = this->m_hp - attack;
-	if (this->m_hp < 0) this->m_hp = 0;
+    this->m_hp = this->m_hp - attack;
+    if (this->m_hp < 0) this->m_hp = 0;
 }

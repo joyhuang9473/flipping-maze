@@ -3,9 +3,9 @@
 USING_NS_CC;
 
 bool KeyboardController::init() {
-	this->m_role = nullptr;
+    this->m_role = nullptr;
 
-	this->setVelocityX(0);
+    this->setVelocityX(0);
     this->setVelocityY(0);
     this->scheduleUpdate();
 
@@ -44,7 +44,7 @@ void KeyboardController::keyPressed(EventKeyboard::KeyCode keyCode, Event *event
             this->m_role->getFSM()->doEvent("walk");
             this->setVelocityY(-3);
             break;
-		// Action
+        // Action
         //case EventKeyboard::KeyCode::KEY_S:
         //    this->m_role->getFSM()->doEvent("attack");
         //    break;
@@ -75,15 +75,15 @@ void KeyboardController::keyReleased(EventKeyboard::KeyCode keyCode, Event* even
 
 void KeyboardController::registerWithKeyboardDispatcher() {
     auto keyboardListener = EventListenerKeyboard::create();
-	keyboardListener->onKeyPressed = CC_CALLBACK_2(KeyboardController::keyPressed, this);
-	keyboardListener->onKeyReleased = CC_CALLBACK_2(KeyboardController::keyReleased, this);
+    keyboardListener->onKeyPressed = CC_CALLBACK_2(KeyboardController::keyPressed, this);
+    keyboardListener->onKeyReleased = CC_CALLBACK_2(KeyboardController::keyReleased, this);
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(keyboardListener, this);
 }
 
 void KeyboardController::setRole(Role* role) {
-	this->m_role = role;
+    this->m_role = role;
 }
 
 Role* KeyboardController::getRole() {
-	return this->m_role;
+    return this->m_role;
 }

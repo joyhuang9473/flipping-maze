@@ -12,20 +12,20 @@ Player::~Player() {
 }
 
 bool Player::init() {
-	this->m_map = nullptr;
+    this->m_map = nullptr;
 
-	/*
-	** It should be adjsuted
-	*/
-	// Sprite Frame
-	FRAMECACHE->addSpriteFramesWithFile("hero-kisi.plist", "hero-kisi.png");
+    /*
+    ** It should be adjsuted
+    */
+    // Sprite Frame
+    FRAMECACHE->addSpriteFramesWithFile("hero-kisi.plist", "hero-kisi.png");
     std::string spName = "kisi";
     Sprite* heroSprite = Sprite::createWithSpriteFrame(FRAMECACHE->getSpriteFrameByName(StringUtils::format("%s-idle-1.png", spName.c_str())));
     this->bindSprite(heroSprite);
 
-	/*
-	** It should be adjsuted
-	*/
+    /*
+    ** It should be adjsuted
+    */
     // Animation
     Animation* standAnim = AnimationUtil::createAnimWithFrameName(StringUtils::format("%s-idle", spName.c_str()).c_str());
     Animation* moveAnim = AnimationUtil::createAnimWithFrameName(StringUtils::format("%s-move", spName.c_str()).c_str());

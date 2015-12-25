@@ -8,7 +8,7 @@ CSVParseUtil* CSVParseUtil::m_csvParseUtil = nullptr;
 
 CSVParseUtil* CSVParseUtil::sharedCSVParseUtil() {
     if (m_csvParseUtil == nullptr) {
-		m_csvParseUtil = new CSVParseUtil();
+        m_csvParseUtil = new CSVParseUtil();
         
         if (m_csvParseUtil && m_csvParseUtil->init()) {
             m_csvParseUtil->autorelease();

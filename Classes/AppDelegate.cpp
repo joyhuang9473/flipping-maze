@@ -48,7 +48,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     register_all_packages();
 
     // create a scene. it's an autorelease object
-	auto gameManager = GameManager::getInstance();
+    auto gameManager = GameManager::getInstance();
     auto scene = MenuScene::create();
 
     // run

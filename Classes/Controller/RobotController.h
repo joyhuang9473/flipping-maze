@@ -14,21 +14,21 @@ public:
         AI_PURSUIT
     };
 
-	CREATE_FUNC(RobotController);
+    CREATE_FUNC(RobotController);
     virtual bool init();
     virtual void update(float dt);
     void updateExecute(float dt);
 
     void decide(const cocos2d::Vec2& targetPos);
 
-	void setRole(Role* role);
-	void setTarget(Role* role);
-	Role* getRole();
-	Role* getTarget();
+    void setRole(Role* role);
+    void setTarget(Role* role);
+    Role* getRole();
+    Role* getTarget();
 
 private:
-	Role* m_role;
-	Role* m_target;
+    Role* m_role;
+    Role* m_target;
 
     CC_SYNTHESIZE(int, m_VelocityX, VelocityX);
     CC_SYNTHESIZE(int, m_VelocityY, VelocityY);

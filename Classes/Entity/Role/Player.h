@@ -7,11 +7,11 @@
 class Player : public Role {
 public:
 
-	Player();
-	~Player();
+    Player();
+    ~Player();
 
-	virtual bool init();
-	CREATE_FUNC(Player);
+    virtual bool init();
+    CREATE_FUNC(Player);
 
     void setViewPointByPlayer();
 
