@@ -1,4 +1,4 @@
-![flipping-maze@460](http://imgur.com/luKB1Ho.png)
+![flipping-maze@480](http://imgur.com/Qim9S4U.png)
 
 Flipping Maze
 =========
@@ -65,11 +65,11 @@ for mac:
 Screenshot
 -----------------------
 
-![screenshot1](http://imgur.com/M5ctppB.png)
+![screenshot1](http://imgur.com/g2s42Li.png)
 
-![screenshot2](http://imgur.com/sXYOOxB.png)
+![screenshot2](http://imgur.com/3pNqnen.png)
 
-![screenshot3](http://imgur.com/KR2ffim.png)
+![screenshot3](http://imgur.com/hboyDQB.png)
 
 More details in [http://imgur.com/a/ueeYL](http://imgur.com/a/ueeYL)
 
