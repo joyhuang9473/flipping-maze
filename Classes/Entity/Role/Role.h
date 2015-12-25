@@ -30,19 +30,19 @@ public:
     void setController(Controller* controller);
     Controller* getController();
 
-	void setTiledMap(cocos2d::TMXTiledMap* map);
+    void setTiledMap(cocos2d::TMXTiledMap* map);
     virtual void setTagPosition(int x, int y);
     virtual cocos2d::Point getTagPosition();
 
     void initFSM();
 
-	virtual void update(float dt);
-	BoundingBox createBoundingBox(cocos2d::Point origin, cocos2d::Size size);
-	void updateBoxes();
+    virtual void update(float dt);
+    BoundingBox createBoundingBox(cocos2d::Point origin, cocos2d::Size size);
+    void updateBoxes();
 
 protected:
-	cocos2d::Sprite* m_sprite;
-	cocos2d::TMXTiledMap* m_map;
+    cocos2d::Sprite* m_sprite;
+    cocos2d::TMXTiledMap* m_map;
     Controller* m_controller;
 
     CC_SYNTHESIZE_RETAIN(FSM*, m_fsm, FSM);

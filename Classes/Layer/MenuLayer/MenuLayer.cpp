@@ -32,7 +32,7 @@ bool MenuLayer::init() {
     startItem->setPosition(Vec2(origin.x + visibleSize.width/2 - startItem->getContentSize().width, origin.y + visibleSize.height/3));
     closeItem->setPosition(Vec2(origin.x + visibleSize.width/2 + closeItem->getContentSize().width, origin.y + visibleSize.height/3));
 
-	MenuItems.pushBack(startItem);
+    MenuItems.pushBack(startItem);
     MenuItems.pushBack(closeItem);
 
     auto menu = Menu::createWithArray(MenuItems);
@@ -58,7 +58,7 @@ void MenuLayer::menuCloseCallback(Ref* pSender) {
     MessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");
     return;
 #endif
-	SimpleAudioEngine::getInstance()->stopBackgroundMusic();
+    SimpleAudioEngine::getInstance()->stopBackgroundMusic();
     Director::getInstance()->end();
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)

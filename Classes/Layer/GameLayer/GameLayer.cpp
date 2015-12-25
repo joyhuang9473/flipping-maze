@@ -14,7 +14,7 @@ bool GameLayer::init() {
         return false;
     }
 
-	// Physics World
+    // Physics World
     //this->initPhysics();
 
     // Stage
@@ -29,48 +29,48 @@ bool GameLayer::init() {
     auto map = TMXTiledMap::create(GAMEMANAGER->getCurMapName());
 
     // Player
-	auto player = Player::create();
-	this->setPlayer(player);
+    auto player = Player::create();
+    this->setPlayer(player);
 
-	this->bindRoleToMap(player, map);
+    this->bindRoleToMap(player, map);
 
-	this->m_map = map;
-	this->m_player = player;
-	this->addChild(this->m_map, -1);
-	this->addChild(this->m_player);
+    this->m_map = map;
+    this->m_player = player;
+    this->addChild(this->m_map, -1);
+    this->addChild(this->m_player);
 
     this->schedule(schedule_selector(GameLayer::logic));
     return true;
 }
 
 void GameLayer::setPlayer(Player* player) {
-	Size visibleSize = Director::getInstance()->getVisibleSize();
+    Size visibleSize = Director::getInstance()->getVisibleSize();
 
-	KeyboardController* keyboardController = KeyboardController::create();
-	keyboardController->registerWithKeyboardDispatcher();
-	keyboardController->setRole(player);
+    KeyboardController* keyboardController = KeyboardController::create();
+    keyboardController->registerWithKeyboardDispatcher();
+    keyboardController->setRole(player);
 
-	player->setController(keyboardController);
-	player->addChild(keyboardController);
-	player->getFSM()->doEvent("stand");
-	player->setPosition(visibleSize.width / 2, visibleSize.height / 2);
+    player->setController(keyboardController);
+    player->addChild(keyboardController);
+    player->getFSM()->doEvent("stand");
+    player->setPosition(visibleSize.width / 2, visibleSize.height / 2);
 }
 
 void GameLayer::bindRoleToMap(Role* role, cocos2d::TMXTiledMap* map) {
-	role->setTiledMap(map);
+    role->setTiledMap(map);
 }
 
 void GameLayer::logic(float dt) {
 
-	/*
-	* Mission Complete
-	*/
-	//Director::getInstance()->getEventDispatcher()->dispatchCustomEvent("missionComplete");
+    /*
+    * Mission Complete
+    */
+    //Director::getInstance()->getEventDispatcher()->dispatchCustomEvent("missionComplete");
 
-	/*
-	* Mission Failed
-	*/
-	//Director::getInstance()->getEventDispatcher()->dispatchCustomEvent("missionFailed");
+    /*
+    * Mission Failed
+    */
+    //Director::getInstance()->getEventDispatcher()->dispatchCustomEvent("missionFailed");
 
 }
 
@@ -91,5 +91,5 @@ void GameLayer::updateActionScope(float dt) {
 }
 
 bool GameLayer::collisionDetection(const BoundingBox &bodyBoxA, const BoundingBox &bodyBoxB) {
-	return true;
+    return true;
 }
